@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">smartphoneapp-for-cameramanagementsystem</string>
+    <string name="title_activity_main">smartphoneapp-for-cameramanagementsystem</string>
+    <string name="package_name">con.ba.app</string>
+    <string name="custom_url_scheme">con.ba.app</string>
+</resources>
