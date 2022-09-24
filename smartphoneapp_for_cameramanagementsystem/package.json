@@ -24,6 +24,7 @@
     "@capacitor/cli": "^4.2.0",
     "@capacitor/core": "^4.2.0",
     "@capacitor/ios": "^4.2.0",
+    "ngx-webcam": "^0.4.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Overview } from './overview/overview.component';
+import { CameraComponent } from './camera/camera.component';
 
 // more Imports
 import { MaterialModule } from './app.material.module';
-import { CameraComponent } from './camera/camera.component';
+import {WebcamModule} from './modules/webcam/webcam.module';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import { CameraComponent } from './camera/camera.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    WebcamModule
 
   ],
   providers: [],
