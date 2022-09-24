@@ -4,17 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OverviewComponent } from './overview/overview.component';
+import { Overview } from './overview/overview.component';
 
+// more Imports
+import { MaterialModule } from './app.material.module';
+import { CameraComponent } from './camera/camera.component';
 @NgModule({
   declarations: [
     AppComponent,
-    OverviewComponent
+    Overview,
+    CameraComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
