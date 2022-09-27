@@ -3,6 +3,7 @@
 
   <div>
     <webcam
+      #video
       [height]="500"
       [width]="330"
       [trigger]="triggerObservable"
@@ -19,6 +20,7 @@
     <button class="actionBtn" (click)="triggerSnapshot()">
       Take A Snapshot
     </button>
+    <br>
     <button class="actionBtn" (click)="toggleWebcam()">Toggle Webcam</button>
     <br />
     <button
@@ -28,22 +30,29 @@
     >
       Next Webcam
     </button>
+    <!-- <button
+      class="actionBtn"
+      (click)="initVideo($event)"
+      [disabled]="streaming"
+    >
+      Streaming
+    </button> -->
+    <br>
     <input
       id="cameraSwitchCheckbox"
       type="checkbox"
       [(ngModel)]="allowCameraSwitch"
     /><label for="cameraSwitchCheckbox">Allow Camera Switch</label>
     <br />
+    <br>
     DeviceId:
-    <input
-      id="deviceId"
-      type="text"
-      [(ngModel)]="deviceId"
-      style="width: 500px"
-    />
+    <input id="deviceId" type="text" [(ngModel)]="deviceId" />
+    <br>
     <button (click)="showNextWebcam(deviceId)">Activate</button>
     <br />
+    <br>
     Preferred facing mode:
+    <br>
     <input
       type="radio"
       value="user"
@@ -67,8 +76,9 @@
   <h2>Nice one!</h2>
   <img [src]="webcamImage.imageAsDataUrl" alt="webcam image" />
 </div>
-
-<h4 *ngIf="messages.length > 0">Messages:</h4>
-<ul *ngFor="let msg of messages">
-  <li>{{ msg | json }}</li>
-</ul>
+<div class="messages">
+  <h4 *ngIf="messages.length > 0">Messages:</h4>
+  <ul *ngFor="let msg of messages">
+    <li>{{ msg | json }}</li>
+  </ul>
+</div>
