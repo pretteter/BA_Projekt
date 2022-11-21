@@ -9,13 +9,23 @@ import { CameraComponent } from './camera/camera.component';
 
 // more Imports
 import { MaterialModule } from './app.material.module';
-import {WebcamModule} from './modules/webcam/webcam.module';
-import {FormsModule} from '@angular/forms';
+import { WebcamModule } from './modules/webcam/webcam.module';
+import { FormsModule } from '@angular/forms';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { AngularClientComponent } from './angular-client/angular-client.component';
+import { HttpClientModule } from '@angular/common/http';
+
+const config: SocketIoConfig = {
+  url: 'http://localhost:4444',
+  options: { transports: ['websocket'], path: '/app/' },
+};
+
 @NgModule({
   declarations: [
     AppComponent,
     Overview,
-    CameraComponent
+    CameraComponent,
+    AngularClientComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,10 +33,11 @@ import {FormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    WebcamModule
-
+    WebcamModule,
+    HttpClientModule,
+    SocketIoModule.forRoot(config),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -24,10 +24,16 @@
     "@capacitor/cli": "^4.2.0",
     "@capacitor/core": "^4.3.0",
     "@capacitor/ios": "^4.3.0",
+    "material-icons": "^1.11.11",
+    "ngx-socket-io": "^4.3.1",
     "ngx-webcam": "^0.4.1",
+    "node-pre-gyp": "^0.17.0",
+    "node-rtsp-stream": "^0.0.9",
     "rimraf": "^3.0.2",
     "rxjs": "~7.5.0",
+    "socket.io": "^4.5.2",
     "tslib": "^2.3.0",
+    "webrtc-connection": "^3.0.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

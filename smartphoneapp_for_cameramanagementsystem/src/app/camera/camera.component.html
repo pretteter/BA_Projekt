@@ -4,7 +4,7 @@
   <div>
     <webcam
       #video
-      [height]="500"
+      id="abc"
       [width]="330"
       [trigger]="triggerObservable"
       (imageCapture)="handleImage($event)"
@@ -20,7 +20,7 @@
     <button class="actionBtn" (click)="triggerSnapshot()">
       Take A Snapshot
     </button>
-    <br>
+    <br />
     <button class="actionBtn" (click)="toggleWebcam()">Toggle Webcam</button>
     <br />
     <button
@@ -30,29 +30,31 @@
     >
       Next Webcam
     </button>
-    <!-- <button
-      class="actionBtn"
-      (click)="initVideo($event)"
-      [disabled]="streaming"
-    >
-      Streaming
-    </button> -->
-    <br>
+    <br />
+    <br />
+    <button class="actionBtn" (click)="initStream()" [disabled]="streaming">
+      start Stream
+    </button>
+    <button class="actionBtn" (click)="stopStream()" [disabled]="!streaming">
+      stop Stream
+    </button>
+    <br />
+    <br />
     <input
       id="cameraSwitchCheckbox"
       type="checkbox"
       [(ngModel)]="allowCameraSwitch"
     /><label for="cameraSwitchCheckbox">Allow Camera Switch</label>
     <br />
-    <br>
+    <br />
     DeviceId:
     <input id="deviceId" type="text" [(ngModel)]="deviceId" />
-    <br>
+    <br />
     <button (click)="showNextWebcam(deviceId)">Activate</button>
     <br />
-    <br>
+    <br />
     Preferred facing mode:
-    <br>
+    <br />
     <input
       type="radio"
       value="user"
@@ -82,3 +84,13 @@
     <li>{{ msg | json }}</li>
   </ul>
 </div>
+<app-angular-client></app-angular-client>
+<div [innerHtml]="externalHtml"></div>
+<video
+  *ngIf="stream"
+  [srcObject]="stream"
+  controls="{false}"
+  [width]="330"
+  autoPlay
+  playsInline
+></video>
